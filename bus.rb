@@ -15,4 +15,22 @@ class Bus
     def how_many_passengers()
         @passengers.size()
     end
+
+    def pick_up(passenger)
+        @passengers.push(passenger)
+    end
+
+    def drop_off(passenger)
+        @passengers.delete(passenger)
+    end
+
+    def empty_bus()
+        @passengers.clear()
+    end
+
+    def pick_up_from_stop(bus_stop)
+         @passengers += bus_stop.queue 
+         bus_stop.reset_queue
+    end
+    
 end 
